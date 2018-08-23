@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "CancelOrder",
+    "description": "Message to send when we want to cancel the order",
+    "type": "object",
+    "extends": {
+        "$ref": "Message.json#"
+    },
+    "properties": {
+        "orderId": {
+            "description": "an ID to uniquely identify the order, get created when order is placed, and stored in Dynamo",
+            "type": "string"
+        }
+    },
+    "required": ["orderId"],
+    "additionalProperties": false
+}

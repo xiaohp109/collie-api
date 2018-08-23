@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "ProductEntry",
+    "description": "Describes a single product name and the number of product",
+    "type": "object",
+    "properties": {
+        "productId": {
+            "description": "*A tests sample now, will add real name later",
+            "enum": [
+                "Chicken",
+                "Beef",
+                "Veggie"
+            ]
+        },
+        "count": {
+            "description": "The number of product specify by productId",
+            "type": "integer"
+        }
+    },
+    "required": ["productId", "count" ],
+    "additionalProperties": false
+}

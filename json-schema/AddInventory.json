@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "AddInventory",
+    "description": "Message type for adding inventory (also for subtract too witn negative number)",
+    "type": "object",
+    "extends": {
+        "$ref": "Message.json#"
+    },
+    "properties": {
+        "products": {
+            "description": "List of 'ProductEntry' describing the order",
+            "type": "array",
+            "items": {
+                "$ref": "ProductEntry.json#"
+            }
+        }
+    },
+    "required": ["products"],
+    "additionalProperties": false
+}

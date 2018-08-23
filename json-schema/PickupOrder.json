@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "PickupOrder",
+    "description": "Message to send when the customer had pickup the order",
+    "type": "object",
+    "extends": {
+        "$ref": "Message.json#"
+    },
+    "properties": {
+        "orderId": {
+            "description": "an ID to uniquely identify the order, get created when order is placed, and stored in Dynamo",
+            "type": "string"
+        },
+        "pickupTime": {
+            "description": "epoch seconds to indicate the time of actual pickup",
+            "type": "integer"
+        }
+    },
+    "required": ["orderId", ""pickupTime"],
+    "additionalProperties": false
+}

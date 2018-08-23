@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "Message",
+    "description": "Base schema defining common properties for message schemas",
+    "type": "object",
+    "properties": {
+        "type": {
+            "description": "Type of message",
+            "enum": [
+                "submitOrder",
+                "pickupOrder",
+                "cancelOrder",
+                "addInventory",
+                "test"
+            ]
+        },
+        "messageId": {
+            "description": "Unique ID for the message, or sequence of messages",
+            "type": "string"
+        }
+    },
+    "additionalProperties": true
+}

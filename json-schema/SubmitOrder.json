@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "title": "SubmitOrder",
+    "description": "Message type for submitting order",
+    "type": "object",
+    "extends": {
+        "$ref": "Message.json#"
+    },
+    "properties": {
+        "email": {
+            "description": "email address to identify customer and send confirmation",
+            "type": "string"
+        },
+        "products": {
+            "description": "List of 'ProductEntry' describing the order",
+            "type": "array",
+            "items": {
+                "$ref": "ProductEntry.json#"
+            }
+        },
+        "pickupTime": {
+            "description": "epoch seconds to indicate the time of pickup, need to be parse by sender/receiver to real date and time",
+            "type": "integer"
+        }
+    },
+    "required": ["email", "products", "pickupTime"],
+    "additionalProperties": false
+}
